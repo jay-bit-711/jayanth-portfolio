@@ -1,0 +1,500 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Jayanth Edara — Senior Product Manager | Growth Analytics & Identity Systems</title>
+  <meta name="description" content="Ex-Amazon & Ex-Jio Senior Product Manager. I help startups and scale-ups ship measurable growth, reduce risk, and build product systems that print money. Fractional PM · Product Analytics · Trust & Safety." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@500;600&display=swap" rel="stylesheet" />
+  <style>
+    :root {
+      --bg: #070b14;
+      --surface: #0f1623;
+      --surface-2: #161f2e;
+      --border: #1e2a3a;
+      --text: #e8eef7;
+      --muted: #8b9bb4;
+      --accent: #3b82f6;
+      --accent-glow: rgba(59,130,246,0.35);
+      --green: #22c55e;
+      --purple: #a78bfa;
+      --orange: #f59e0b;
+      --gradient: linear-gradient(135deg, #3b82f6 0%, #8b5cf6 50%, #ec4899 100%);
+      --radius: 16px;
+    }
+
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      font-family: 'Inter', system-ui, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.6;
+      overflow-x: hidden;
+    }
+
+    body::before {
+      content: '';
+      position: fixed;
+      inset: 0;
+      background-image:
+        radial-gradient(ellipse 80% 50% at 50% -20%, rgba(59,130,246,0.12), transparent),
+        linear-gradient(rgba(59,130,246,0.03) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(59,130,246,0.03) 1px, transparent 1px);
+      background-size: 100% 100%, 64px 64px, 64px 64px;
+      pointer-events: none;
+      z-index: 0;
+    }
+
+    .container { max-width: 1120px; margin: 0 auto; padding: 0 24px; position: relative; z-index: 1; }
+
+    /* NAV */
+    nav {
+      position: sticky; top: 0; z-index: 100;
+      backdrop-filter: blur(16px);
+      background: rgba(7,11,20,0.8);
+      border-bottom: 1px solid var(--border);
+      padding: 14px 0;
+    }
+    nav .inner { display: flex; justify-content: space-between; align-items: center; }
+    .logo { font-weight: 800; font-size: 18px; letter-spacing: -0.5px; }
+    .logo span { background: var(--gradient); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+    .nav-links { display: flex; gap: 28px; align-items: center; }
+    .nav-links a { color: var(--muted); text-decoration: none; font-size: 14px; font-weight: 500; transition: color 0.2s; }
+    .nav-links a:hover { color: var(--text); }
+    .nav-cta {
+      background: var(--accent); color: white !important;
+      padding: 8px 16px; border-radius: 8px; font-weight: 600;
+    }
+    .nav-cta:hover { background: #2563eb; color: white !important; }
+
+    /* HERO */
+    .hero { padding: 80px 0 64px; }
+    .hero-badge {
+      display: inline-flex; align-items: center; gap: 8px;
+      background: rgba(34,197,94,0.1); border: 1px solid rgba(34,197,94,0.25);
+      color: var(--green); font-size: 13px; font-weight: 600;
+      padding: 6px 14px; border-radius: 100px; margin-bottom: 24px;
+    }
+    .hero-badge .dot { width: 8px; height: 8px; background: var(--green); border-radius: 50%; animation: pulse 2s infinite; }
+    @keyframes pulse { 0%,100%{opacity:1} 50%{opacity:0.5} }
+
+    .hero h1 {
+      font-size: clamp(36px, 5.5vw, 56px);
+      font-weight: 800; letter-spacing: -1.8px; line-height: 1.08;
+      margin-bottom: 20px; max-width: 780px;
+    }
+    .hero h1 .grad { background: var(--gradient); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+
+    .hero-sub {
+      font-size: 18px; color: var(--muted); max-width: 620px;
+      margin-bottom: 36px; line-height: 1.55;
+    }
+
+    .hero-cta { display: flex; gap: 14px; flex-wrap: wrap; margin-bottom: 56px; }
+    .btn {
+      display: inline-flex; align-items: center; gap: 8px;
+      padding: 14px 24px; border-radius: 10px;
+      font-weight: 600; font-size: 15px; text-decoration: none;
+      transition: all 0.25s; border: none; cursor: pointer;
+    }
+    .btn-primary {
+      background: var(--gradient); color: white;
+      box-shadow: 0 4px 24px var(--accent-glow);
+    }
+    .btn-primary:hover { transform: translateY(-2px); box-shadow: 0 8px 32px var(--accent-glow); }
+    .btn-ghost {
+      background: transparent; color: var(--text);
+      border: 1px solid var(--border);
+    }
+    .btn-ghost:hover { border-color: var(--accent); color: var(--accent); }
+
+    /* PROOF BAR */
+    .proof-bar {
+      display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px;
+      background: var(--surface); border: 1px solid var(--border);
+      border-radius: var(--radius); padding: 28px 20px;
+    }
+    .proof-item { text-align: center; }
+    .proof-item .num {
+      font-size: 28px; font-weight: 800; font-family: 'JetBrains Mono', monospace;
+      background: var(--gradient); -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+      line-height: 1.1;
+    }
+    .proof-item .label { font-size: 12px; color: var(--muted); margin-top: 6px; text-transform: uppercase; letter-spacing: 0.4px; }
+
+    /* SECTIONS */
+    section { padding: 72px 0; }
+    .section-label {
+      font-size: 13px; font-weight: 600; color: var(--accent);
+      text-transform: uppercase; letter-spacing: 1.2px; margin-bottom: 10px;
+    }
+    .section-title {
+      font-size: 32px; font-weight: 800; letter-spacing: -0.8px;
+      margin-bottom: 12px;
+    }
+    .section-desc { color: var(--muted); font-size: 16px; max-width: 560px; margin-bottom: 40px; }
+
+    /* OFFERS */
+    .offers-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
+    .offer-card {
+      background: var(--surface); border: 1px solid var(--border);
+      border-radius: var(--radius); padding: 28px; position: relative;
+      transition: all 0.3s; display: flex; flex-direction: column;
+    }
+    .offer-card:hover { border-color: rgba(59,130,246,0.45); transform: translateY(-4px); box-shadow: 0 20px 40px rgba(0,0,0,0.35); }
+    .offer-card.featured { border-color: rgba(59,130,246,0.5); background: linear-gradient(180deg, rgba(59,130,246,0.08) 0%, var(--surface) 40%); }
+    .offer-card .badge {
+      position: absolute; top: -11px; left: 24px;
+      background: var(--accent); color: white; font-size: 11px; font-weight: 700;
+      padding: 4px 12px; border-radius: 100px; text-transform: uppercase; letter-spacing: 0.5px;
+    }
+    .offer-icon {
+      width: 48px; height: 48px; border-radius: 12px;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 22px; margin-bottom: 18px;
+    }
+    .offer-card h3 { font-size: 20px; font-weight: 700; margin-bottom: 10px; }
+    .offer-card p { color: var(--muted); font-size: 14.5px; margin-bottom: 20px; flex: 1; }
+    .offer-price {
+      font-family: 'JetBrains Mono', monospace; font-size: 15px; font-weight: 600;
+      color: var(--text); margin-bottom: 18px;
+    }
+    .offer-price span { color: var(--muted); font-weight: 400; font-size: 13px; }
+    .offer-list { list-style: none; margin-bottom: 24px; }
+    .offer-list li {
+      font-size: 13.5px; color: #c5d0e0; padding: 5px 0 5px 20px; position: relative;
+    }
+    .offer-list li::before { content: '✓'; position: absolute; left: 0; color: var(--green); font-weight: 700; }
+
+    /* CASE STUDIES */
+    .cases { display: flex; flex-direction: column; gap: 24px; }
+    .case {
+      background: var(--surface); border: 1px solid var(--border);
+      border-radius: var(--radius); padding: 32px; display: grid;
+      grid-template-columns: 1fr 200px; gap: 32px; align-items: start;
+      transition: border-color 0.3s;
+    }
+    .case:hover { border-color: rgba(59,130,246,0.4); }
+    .case-tag {
+      display: inline-block; font-size: 11px; font-weight: 700; text-transform: uppercase;
+      letter-spacing: 0.8px; padding: 4px 10px; border-radius: 6px; margin-bottom: 12px;
+    }
+    .case-tag.amazon { background: rgba(251,146,60,0.15); color: #fb923c; }
+    .case-tag.jio { background: rgba(167,139,250,0.15); color: #a78bfa; }
+    .case h3 { font-size: 20px; font-weight: 700; margin-bottom: 10px; }
+    .case p { color: var(--muted); font-size: 14.5px; margin-bottom: 16px; }
+    .case-results { display: flex; flex-wrap: wrap; gap: 12px; }
+    .result-pill {
+      background: var(--surface-2); border: 1px solid var(--border);
+      padding: 8px 14px; border-radius: 8px; font-size: 13px;
+    }
+    .result-pill strong { color: var(--green); font-family: 'JetBrains Mono', monospace; }
+    .case-metrics {
+      display: flex; flex-direction: column; gap: 12px;
+    }
+    .metric-box {
+      background: var(--surface-2); border-radius: 12px; padding: 16px; text-align: center;
+    }
+    .metric-box .val {
+      font-size: 24px; font-weight: 800; font-family: 'JetBrains Mono', monospace;
+      background: var(--gradient); -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+    }
+    .metric-box .lab { font-size: 11px; color: var(--muted); margin-top: 4px; text-transform: uppercase; }
+
+    /* ABOUT */
+    .about-grid { display: grid; grid-template-columns: 1.2fr 1fr; gap: 40px; align-items: center; }
+    .about-text p { color: var(--muted); margin-bottom: 16px; font-size: 15.5px; }
+    .cred-list { display: flex; flex-direction: column; gap: 12px; }
+    .cred {
+      background: var(--surface); border: 1px solid var(--border);
+      border-radius: 12px; padding: 16px 18px; display: flex; gap: 14px; align-items: center;
+    }
+    .cred-icon { font-size: 24px; }
+    .cred strong { display: block; font-size: 14px; }
+    .cred span { font-size: 12.5px; color: var(--muted); }
+
+    /* CTA */
+    .final-cta {
+      background: linear-gradient(135deg, rgba(59,130,246,0.15), rgba(139,92,246,0.12));
+      border: 1px solid rgba(59,130,246,0.3);
+      border-radius: 20px; padding: 56px 40px; text-align: center;
+    }
+    .final-cta h2 { font-size: 30px; font-weight: 800; margin-bottom: 12px; }
+    .final-cta p { color: var(--muted); margin-bottom: 28px; max-width: 480px; margin-left: auto; margin-right: auto; }
+
+    /* FOOTER */
+    footer {
+      border-top: 1px solid var(--border); padding: 32px 0;
+      display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 16px;
+    }
+    footer p { color: var(--muted); font-size: 13px; }
+    footer a { color: var(--accent); text-decoration: none; }
+
+    @media (max-width: 900px) {
+      .offers-grid { grid-template-columns: 1fr; }
+      .case { grid-template-columns: 1fr; }
+      .about-grid { grid-template-columns: 1fr; }
+      .proof-bar { grid-template-columns: 1fr 1fr; }
+      .nav-links a:not(.nav-cta) { display: none; }
+    }
+    @media (max-width: 500px) {
+      .proof-bar { grid-template-columns: 1fr; }
+      .hero { padding: 48px 0 40px; }
+    }
+  </style>
+</head>
+<body>
+  <nav>
+    <div class="container inner">
+      <div class="logo">Jayanth <span>Edara</span></div>
+      <div class="nav-links">
+        <a href="#offers">Services</a>
+        <a href="#work">Case Studies</a>
+        <a href="#about">About</a>
+        <a href="#contact" class="nav-cta">Book a Call</a>
+      </div>
+    </div>
+  </nav>
+
+  <header class="hero">
+    <div class="container">
+      <div class="hero-badge"><span class="dot"></span> Available for fractional & project work</div>
+      <h1>I help product teams <span class="grad">ship growth</span> and kill risk before it kills the business.</h1>
+      <p class="hero-sub">
+        Senior Product Manager · Ex-Amazon Identity & Fraud · Ex-Jio Enterprise XR.<br>
+        I turn ambiguous product problems into clear metrics, experiments, and revenue outcomes.
+      </p>
+      <div class="hero-cta">
+        <a href="#contact" class="btn btn-primary">Start a Conversation →</a>
+        <a href="#work" class="btn btn-ghost">See Results</a>
+      </div>
+
+      <div class="proof-bar">
+        <div class="proof-item">
+          <div class="num">96%</div>
+          <div class="label">ATO Reduction</div>
+        </div>
+        <div class="proof-item">
+          <div class="num">700+</div>
+          <div class="label">Enterprise Clients</div>
+        </div>
+        <div class="proof-item">
+          <div class="num">₹14 Cr</div>
+          <div class="label">Revenue Driven</div>
+        </div>
+        <div class="proof-item">
+          <div class="num">9+</div>
+          <div class="label">Years Shipping</div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- OFFERS -->
+  <section id="offers">
+    <div class="container">
+      <div class="section-label">How I Can Help</div>
+      <h2 class="section-title">Three ways to work together</h2>
+      <p class="section-desc">Clear scope. Clear outcomes. No fluff retainers that go nowhere.</p>
+
+      <div class="offers-grid">
+        <!-- Offer 1 -->
+        <div class="offer-card featured">
+          <div class="badge">Most Popular</div>
+          <div class="offer-icon" style="background:rgba(59,130,246,0.15)">⚡</div>
+          <h3>Fractional Product / Growth Analytics</h3>
+          <p>Embed a senior PM who owns metrics, experiments, and growth loops — without the full-time cost.</p>
+          <div class="offer-price">$3,000 – $6,000 <span>/ month</span></div>
+          <ul class="offer-list">
+            <li>15–20 hrs/week dedicated</li>
+            <li>Metric definition & instrumentation</li>
+            <li>A/B & experiment design</li>
+            <li>Weekly growth reviews + roadmap input</li>
+            <li>SQL / Python analysis when needed</li>
+          </ul>
+          <a href="#contact" class="btn btn-primary" style="width:100%;justify-content:center">Get Started</a>
+        </div>
+
+        <!-- Offer 2 -->
+        <div class="offer-card">
+          <div class="offer-icon" style="background:rgba(167,139,250,0.15)">📦</div>
+          <h3>Product Metrics OS</h3>
+          <p>Battle-tested templates, SQL packs, experiment frameworks and Loom trainings so your team can run like a growth machine.</p>
+          <div class="offer-price">$497 – $2,500 <span>one-time + upsells</span></div>
+          <ul class="offer-list">
+            <li>Notion + GitHub template systems</li>
+            <li>SQL window functions & cohort packs</li>
+            <li>Experiment design playbooks</li>
+            <li>Optional 1:1 setup workshop</li>
+            <li>Lifetime free for first 90 days</li>
+          </ul>
+          <a href="#contact" class="btn btn-ghost" style="width:100%;justify-content:center">Learn More</a>
+        </div>
+
+        <!-- Offer 3 -->
+        <div class="offer-card">
+          <div class="offer-icon" style="background:rgba(34,197,94,0.15)">🛡️</div>
+          <h3>Trust & Safety / Identity Systems</h3>
+          <p>Reduce account takeovers, fraud losses and support load using proven identity & risk patterns from Amazon scale.</p>
+          <div class="offer-price">$4,000 – $12,000 <span>project or retainer</span></div>
+          <ul class="offer-list">
+            <li>Fraud & ATO diagnostic</li>
+            <li>Identity flow redesign</li>
+            <li>Risk model recommendations</li>
+            <li>Metric & monitoring setup</li>
+            <li>Playbooks your eng team can own</li>
+          </ul>
+          <a href="#contact" class="btn btn-ghost" style="width:100%;justify-content:center">Discuss Project</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CASE STUDIES -->
+  <section id="work">
+    <div class="container">
+      <div class="section-label">Selected Work</div>
+      <h2 class="section-title">Outcomes that moved the needle</h2>
+      <p class="section-desc">Real problems. Real numbers. From two of the largest technology platforms in the world.</p>
+
+      <div class="cases">
+        <!-- Amazon -->
+        <article class="case">
+          <div>
+            <span class="case-tag amazon">Amazon · Identity & Authentication</span>
+            <h3>Cut Account Takeovers by 96% while scaling password-less login</h3>
+            <p>
+              Owned end-to-end product analytics and flow design for Worldwide Authentication serving millions of users. 
+              Redesigned identity challenges and partnered on AI “Seed of Trust” models. 
+              Turned fraud operations from reactive firefighting into a measurable product system.
+            </p>
+            <div class="case-results">
+              <div class="result-pill"><strong>96%</strong> reduction in Account Takeovers</div>
+              <div class="result-pill"><strong>10 → 1 day</strong> fraud reversal TAT</div>
+              <div class="result-pill"><strong>85%</strong> users moved to password-less</div>
+            </div>
+          </div>
+          <div class="case-metrics">
+            <div class="metric-box">
+              <div class="val">96%</div>
+              <div class="lab">ATO ↓</div>
+            </div>
+            <div class="metric-box">
+              <div class="val">10→1</div>
+              <div class="lab">Days TAT</div>
+            </div>
+          </div>
+        </article>
+
+        <!-- Jio -->
+        <article class="case">
+          <div>
+            <span class="case-tag jio">Jio Platforms · Enterprise XR</span>
+            <h3>From zero to 700+ enterprise customers and ₹14 Cr in 3 months</h3>
+            <p>
+              As Head of Enterprise for the AR/VR platform, I owned product strategy, growth metrics, 
+              user journeys (Gaze, Dwell, Voice) and GTM. Built the analytics stack that let us iterate weekly 
+              and close the first wave of large enterprise deals.
+            </p>
+            <div class="case-results">
+              <div class="result-pill"><strong>700+</strong> enterprise customers</div>
+              <div class="result-pill"><strong>₹14 Cr</strong> initial revenue</div>
+              <div class="result-pill"><strong>3 months</strong> to first major GTM wave</div>
+            </div>
+          </div>
+          <div class="case-metrics">
+            <div class="metric-box">
+              <div class="val">700+</div>
+              <div class="lab">Customers</div>
+            </div>
+            <div class="metric-box">
+              <div class="val">₹14 Cr</div>
+              <div class="lab">Revenue</div>
+            </div>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- ABOUT -->
+  <section id="about">
+    <div class="container">
+      <div class="about-grid">
+        <div class="about-text">
+          <div class="section-label">About</div>
+          <h2 class="section-title">I build product systems that survive scale</h2>
+          <p>
+            Most product work is either pure feature factories or pure strategy slides. 
+            I live in the middle — defining the metrics that matter, designing the experiments that move them, 
+            and making sure engineering and leadership can actually act on the data.
+          </p>
+          <p>
+            At Amazon I worked on identity infrastructure that protects millions of users. 
+            At Jio I took an XR platform from concept to enterprise revenue. 
+            Now I help ambitious teams get the same clarity and speed without the big-company overhead.
+          </p>
+        </div>
+        <div class="cred-list">
+          <div class="cred">
+            <div class="cred-icon">🏢</div>
+            <div>
+              <strong>Amazon</strong>
+              <span>Product Analyst — Identity & Authentication</span>
+            </div>
+          </div>
+          <div class="cred">
+            <div class="cred-icon">📱</div>
+            <div>
+              <strong>Jio Platforms / Tesseract</strong>
+              <span>Senior Product Manager — Enterprise XR</span>
+            </div>
+          </div>
+          <div class="cred">
+            <div class="cred-icon">🎓</div>
+            <div>
+              <strong>M.Tech, GITAM University</strong>
+              <span>Communications Engineering</span>
+            </div>
+          </div>
+          <div class="cred">
+            <div class="cred-icon">🌍</div>
+            <div>
+              <strong>Based in Hyderabad</strong>
+              <span>Open to global remote & hybrid</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FINAL CTA -->
+  <section id="contact">
+    <div class="container">
+      <div class="final-cta">
+        <h2>Ready to move the metrics that matter?</h2>
+        <p>Tell me about the product problem you’re solving. I’ll tell you honestly whether I’m the right fit and how we could work together.</p>
+        <div style="display:flex;gap:14px;justify-content:center;flex-wrap:wrap">
+          <a href="mailto:jayanthedara@gmail.com?subject=Portfolio%20Inquiry%20—%20Fractional%20/%20Project" class="btn btn-primary">Email Me</a>
+          <a href="https://www.linkedin.com/in/jayanth-edara-077a63301/" target="_blank" rel="noopener" class="btn btn-ghost">LinkedIn</a>
+          <a href="tel:+919441828722" class="btn btn-ghost">+91 94418 28722</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <div class="container" style="display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:12px;width:100%">
+      <p>© 2026 Jayanth Edara · Senior Product Manager</p>
+      <p>
+        <a href="mailto:jayanthedara@gmail.com">jayanthedara@gmail.com</a> ·
+        <a href="https://www.linkedin.com/in/jayanth-edara-077a63301/" target="_blank">LinkedIn</a>
+      </p>
+    </div>
+  </footer>
+</body>
+</html>
